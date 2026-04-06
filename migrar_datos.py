@@ -23,6 +23,8 @@ def migrar():
             {"email":"carlos@consultify.com", "password":"carlos123",  "role":"interno",  "nombre":"Carlos López", "cliente_id":None},
             {"email":"cliente1@empresa.com",  "password":"cliente123", "role":"cliente",  "nombre":"Empresa S.A.", "cliente_id":"C001"},
             {"email":"cliente2@startup.com",  "password":"startup123", "role":"cliente",  "nombre":"StartUp XYZ",  "cliente_id":"C002"},
+            {"email":"junior1@consultify.com", "password":"junior123",  "role":"junior",   "nombre":"Lucas Martínez","cliente_id":None},
+            {"email":"junior2@consultify.com", "password":"junior456",  "role":"junior",   "nombre":"Valentina Ruiz","cliente_id":None},
         ]
         for u in usuarios:
             insert_usuario(u)

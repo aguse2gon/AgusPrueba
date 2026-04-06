@@ -357,7 +357,7 @@ def login():
 def sidebar_nav():
     with st.sidebar:
         role_label = {"admin":"Administrador","interno":"Equipo interno",
-                      "cliente":"Cliente"}.get(st.session_state.user_role,"")
+                      "cliente":"Cliente","junior":"Junior"}.get(st.session_state.user_role,"")
         initials   = "".join(w[0].upper() for w in
                              st.session_state.user_nombre.split()[:2])
 
@@ -407,6 +407,10 @@ def sidebar_nav():
             }
             if role == "admin":
                 pages["⚙️  Configuración"] = "config"
+        elif role == "junior":
+            pages = {
+                "📁  Mis proyectos":  "junior",
+            }
         else:
             pages = {
                 "🏠  Mi Portal":      "portal_cliente",
@@ -463,6 +467,8 @@ def main():
 
     if page == "dashboard":
         from vistas import dashboard;            dashboard.show()
+    elif page == "junior":
+        from vistas import junior;               junior.show()
     elif page == "clientes":
         from vistas import clientes;             clientes.show()
     elif page == "proyectos":
